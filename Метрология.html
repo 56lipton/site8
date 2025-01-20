@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #case0 {
+            position: absolute; left: 100px; top: 100px;
+        }
+        #case1 {
+            position: absolute; left: 1000px; top: 100px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>АРМ Метрология</title>
+    <script>
+         min = [49.873, 29.976, 129.88, 69.88, 64.986, 14.88];
+        max = [50.127, 30.016, 130.12, 70.12, 65.087, 15];
+        min1 = [14.88, 27.937, 43.929, 35.909, 52, 30.91, 36.913, 14.985,23.913,46.9, 9.91, 10.45, 5.925, 34.47, 4.43, 20.1, 10, 38.52, 80];
+        max1 = [15, 28.063, 44.071, 36, 52.105, 31.09, 37.087, 15.015, 24.087, 47.1, 10.09, 10.55, 6.075, 34.62, 4.5, 20,17, 10.045, 38.68, 80.2];
+    function main2() {
+            var mainCount1 = 0;
+            var mainCount2 = 0;
+            var mainCount3 = 0;
+            if (checkt(0) == 9){
+                mainCount1 = mainCount1 + 1
+            }
+            else {
+                mainCount1 = mainCount1
+            }
+            if (checkt1(0) == 9){
+                mainCount1 = mainCount1 + 1
+            }
+            else {
+                mainCount1 = mainCount1
+            }
+            if (checkt2(0) == 1){
+                mainCount1 = mainCount1 + 1
+            }
+            else {
+                mainCount1 = mainCount1
+            }
+            if (mainCount1 == 3) {
+                resultt1.style.backgroundColor = "green"; resultt1.innerHTML = "ГОДЕН"
+            }
+             else {
+                resultt1.style.backgroundColor = "red"; resultt1.innerHTML = "БРАК"
+            }
+            if (checkt(1) == 9){
+                mainCount2 = mainCount2 + 1
+            }
+            else {
+                mainCount2 = mainCount2
+            }
+            if (checkt1(1) == 9){
+                mainCount2 = mainCount2 + 1
+            }
+            else {
+                mainCount2 = mainCount2
+            }
+            if (checkt2(1) == 1){
+                mainCount2 = mainCount2 + 1
+            }
+            else {
+                mainCount2 = mainCount2
+            }
+            if (mainCount2 == 3) {
+                resultt2.style.backgroundColor = "green"; resultt2.innerHTML = "ГОДЕН"
+            }
+             else {
+                resultt2.style.backgroundColor = "red"; resultt2.innerHTML = "БРАК"
+            }
+            if (checkt(2) == 9){
+                mainCount3 = mainCount3 + 1
+            }
+            else {
+                mainCount3 = mainCount3
+            }
+            if (checkt1(2) == 9){
+                mainCount3 = mainCount3 + 1
+            }
+            else {
+                mainCount3 = mainCount3
+            }
+            if (checkt2(2) == 1){
+                mainCount3 = mainCount3 + 1
+            }
+            else {
+                mainCount3 = mainCount3
+            }
+            if (mainCount3 == 3) {
+                resultt3.style.backgroundColor = "green"; resultt3.innerHTML = "ГОДЕН"
+            }
+             else {
+                resultt3.style.backgroundColor = "red"; resultt3.innerHTML = "БРАК"
+            }
+
+    function checkt(f) {
+            var count1 = 0;
+            var a0 = document.getElementById("w0").options.selectedIndex;
+            count1 = count1 + rest(1,a0, f);
+            var a1 = document.getElementById("w1").options.selectedIndex;
+            count1 = count1 + rest(2,a1, f);
+            var a2 = document.getElementById("w2").options.selectedIndex;
+            count1 = count1 + rest(3,a2, f);
+            var a3 = document.getElementById("w3").options.selectedIndex;
+            count1 = count1 + rest(4,a3, f);
+            var a4 = document.getElementById("w4").options.selectedIndex;
+            count1 = count1 + rest(5,a4, f);
+            var a5 = document.getElementById("w5").options.selectedIndex;
+            count1 = count1 + rest(6,a5, f);
+            var a6 = document.getElementById("w6").options.selectedIndex;
+            count1 = count1 + rest(7,a6, f);
+            var a7 = document.getElementById("w7").options.selectedIndex;
+            count1 = count1 + rest(8,a7, f);
+            var a8 = document.getElementById("w8").options.selectedIndex;
+            count1 = count1 + rest(9,a8, f);
+
+            return count1;
+        }
+        function rest(x,a,f) {
+            if (document.getElementById("y"+x+""+f).value <= max1[a] && document.getElementById("y"+x+""+f).value >= min1[a]){
+                return 1
+            } else  {
+                return 0
+            }
+
+        }
+        function checkt1(d) {
+            var count2 = 0;
+            var x0 = document.getElementById("c0").options.selectedIndex;
+            count2 = count2 + rest1(1,x0, d);
+            var x1 = document.getElementById("c1").options.selectedIndex;
+            count2 = count2 + rest1(2,x1, d);
+            var x2 = document.getElementById("c2").options.selectedIndex;
+            count2 = count2 + rest1(3,x2, d);
+            var x3 = document.getElementById("c3").options.selectedIndex;
+            count2 = count2 + rest1(4,x3, d);
+            var x4 = document.getElementById("c4").options.selectedIndex;
+            count2 = count2 + rest1(5,x4, d);
+            var x5 = document.getElementById("c5").options.selectedIndex;
+            count2 = count2 + rest1(6,x5, d);
+            var x6 = document.getElementById("c6").options.selectedIndex;
+            count2 = count2 + rest1(7,x6, d);
+            var x7 = document.getElementById("c7").options.selectedIndex;
+            count2 = count2 + rest1(8,x7, d);
+            var x8 = document.getElementById("c8").options.selectedIndex;
+            count2 = count2 + rest1(9,x8, d);
+
+            return count2;
+        }
+        function rest1(c,x,d) {
+            if (document.getElementById("x"+c+""+d).value <= max1[x] && document.getElementById("x"+c+""+d).value >= min1[x]){
+                return 1
+            } else  {
+                return 0
+            }
+
+        }
+        function checkt2(m) {
+            var count3 = 0;
+            var q0 = document.getElementById("t0").options.selectedIndex;
+            count3 = count3 + rest2(1,q0, m);
+            return count3;
+        }
+        function rest2(i,x,m) {
+            if (document.getElementById("r"+i+""+m).value <= max1[x] && document.getElementById("r"+i+""+m).value >= min1[x]){
+                return 1
+            } else  {
+                return 0
+            }
+
+        }
+    }
+    function main() {
+            result1 = document.getElementById("result1");
+            result2 = document.getElementById("result2");
+            result3 = document.getElementById("result3");
+            if (check(0) == 6){
+                result1.style.backgroundColor = "green"; result1.innerHTML = "ГОДЕН"
+            }
+            else {
+                result1.style.backgroundColor = "red"; result1.innerHTML = "БРАК"
+            }
+            if (check(1) == 6){
+                result2.style.backgroundColor = "green"; result2.innerHTML = "ГОДЕН"
+            }
+            else {
+                result2.style.backgroundColor = "red"; result2.innerHTML = "БРАК"
+            }
+            if (check(2) == 6){
+                result3.style.backgroundColor = "green"; result3.innerHTML = "ГОДЕН"
+            }
+            else {
+                result3.style.backgroundColor = "red"; result3.innerHTML = "БРАК"
+            }
+    function check(g) {
+            var count = 0;
+            var answer0 = document.getElementById("window0").options.selectedIndex;
+            count = count + res(1,answer0, g);
+            var answer1 = document.getElementById("window1").options.selectedIndex;
+            count = count + res(2,answer1, g);
+            var answer2 = document.getElementById("window2").options.selectedIndex;
+            count = count + res(3,answer2, g);
+            var answer3 = document.getElementById("window3").options.selectedIndex;
+            count = count + res(4,answer3, g);
+            var answer4 = document.getElementById("window4").options.selectedIndex;
+            count = count + res(5,answer4, g);
+            var answer5 = document.getElementById("window5").options.selectedIndex;
+            count = count + res(6,answer5, g);
+            return count;
+        }
+    function res(s,answer,g) {
+            if (document.getElementById("o"+s+""+g).value <= max[answer] && document.getElementById("o"+s+""+g).value >= min[answer]){
+                return 1
+            } else  {
+                return 0
+            }
+
+        }
+    }
+    </script>
+</head>
+<body>
+<div id="case0"> МАРКЕРОВКА ПАРТИИ: 0001
+<form>
+    <table border = "1">
+            <tr><td>Параметр контроля</select></td>
+                <td>Деталь 1_1</td>
+                <td>Деталь 1_2</td>
+                <td>Деталь 1_3</td>
+            </tr>
+            <tr><td>
+                <select id = "window0">
+                    <option>Диаметр 50</option>
+                    <option>Диаметр 30</option>
+                    <option>Расстояние 130</option>
+                    <option>Расстояние 70</option>
+                    <option>Расстояние 65</option>
+                    <option>Расстояние 15</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "o10"></td>
+                <td><input type = "number"  id = "o11"></td>
+                <td><input type = "number"  id = "o12"></td>
+            </tr>
+            <tr><td>
+                <select id = "window1">
+                    <option>Диаметр 50</option>
+                    <option>Диаметр 30</option>
+                    <option>Расстояние 130</option>
+                    <option>Расстояние 70</option>
+                    <option>Расстояние 65</option>
+                    <option>Расстояние 15</option>
+                </select>
+            </td>
+                <td><input type = "number" id = "o20"></td>
+                <td><input type = "number" id = "o21"></td>
+                <td><input type = "number" id = "o22"></td>
+            </tr>
+                <tr><td><select id = "window2">
+                    <option>Диаметр 50</option>
+                    <option>Диаметр 30</option>
+                    <option>Расстояние 130</option>
+                    <option>Расстояние 70</option>
+                    <option>Расстояние 65</option>
+                    <option>Расстояние 15</option>
+            </select></td>
+                <td><input type = "number" id = "o30"></td>
+                <td><input type = "number" id = "o31"></td>
+                <td><input type = "number" id = "o32"></td>
+            </tr>
+            <tr><td><select id = "window3">
+                    <option>Диаметр 50</option>
+                    <option>Диаметр 30</option>
+                    <option>Расстояние 130</option>
+                    <option>Расстояние 70</option>
+                    <option>Расстояние 65</option>
+                    <option>Расстояние 15</option>
+            </select></td>
+                <td><input type = "number" id = "o40"></td>
+                <td><input type = "number" id = "o41"></td>
+                <td><input type = "number" id = "o42"></td>
+            </tr>
+            <tr><td><select id = "window4">
+                    <option>Диаметр 50</option>
+                    <option>Диаметр 30</option>
+                    <option>Расстояние 130</option>
+                    <option>Расстояние 70</option>
+                    <option>Расстояние 65</option>
+                    <option>Расстояние 15</option>
+            </select></td>
+                <td><input type = "number" id = "o50"></td>
+                <td><input type = "number" id = "o51"></td>
+                <td><input type = "number" id = "o52"></td>
+            </tr>
+            <tr><td><select id = "window5">
+                    <option>Диаметр 50</option>
+                    <option>Диаметр 30</option>
+                    <option>Расстояние 130</option>
+                    <option>Расстояние 70</option>
+                    <option>Расстояние 65</option>
+                    <option>Расстояние 15</option>
+            </select></td>
+                <td><input type = "number" id = "o60"></td>
+                <td><input type = "number" id = "o61"></td>
+                <td><input type = "number" id = "o62"></td>
+            </tr>
+            <tr><td>Заключение</td>
+                <td id = "result1"></td>
+                <td id = "result2"></td>
+                <td id = "result3"></td>
+        </tr>
+    </table>
+</form>
+    <button onclick="main()">Проверить</button>
+    </div> 
+<div id="case1"> МАРКЕРОВКА ПАРТИИ: 0002    
+<form>
+    <table border = "1">
+            <tr><td>Параметр контроля</select></td>
+                <td>Деталь 1_1</td>
+                <td>Деталь 1_2</td>
+                <td>Деталь 1_3</td>
+            </tr>
+            <tr><td>
+                <select id = "w0">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "y10"></td>
+                <td><input type = "number"  id = "y11"></td>
+                <td><input type = "number"  id = "y12"></td>
+            </tr>
+            <tr><td>
+                <select id = "w1">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number" id = "y20"></td>
+                <td><input type = "number" id = "y21"></td>
+                <td><input type = "number" id = "y22"></td>
+            </tr>
+                <tr><td><select id = "w2">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+            </select></td>
+                <td><input type = "number" id = "y30"></td>
+                <td><input type = "number" id = "y31"></td>
+                <td><input type = "number" id = "y32"></td>
+            </tr>
+            <tr><td><select id = "w3">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+            </select></td>
+                <td><input type = "number" id = "y40"></td>
+                <td><input type = "number" id = "y41"></td>
+                <td><input type = "number" id = "y42"></td>
+            </tr>
+            <tr><td><select id = "w4">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+            </select></td>
+                <td><input type = "number" id = "y50"></td>
+                <td><input type = "number" id = "y51"></td>
+                <td><input type = "number" id = "y52"></td>
+            </tr>
+            <tr><td><select id = "w5">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+            </select></td>
+                <td><input type = "number" id = "y60"></td>
+                <td><input type = "number" id = "y61"></td>
+                <td><input type = "number" id = "y62"></td>
+            </tr>
+        <tr><td>
+                <select id = "w6">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "y70"></td>
+                <td><input type = "number"  id = "y71"></td>
+                <td><input type = "number"  id = "y72"></td>
+            </tr>
+        <tr><td>
+                <select id = "w7">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "y80"></td>
+                <td><input type = "number"  id = "y81"></td>
+                <td><input type = "number"  id = "y82"></td>
+            </tr>
+        <tr><td>
+                <select id = "w8">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "y90"></td>
+                <td><input type = "number"  id = "y91"></td>
+                <td><input type = "number"  id = "y92"></td>
+            </tr>
+        <tr><td>
+                <select id = "c0">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x10"></td>
+                <td><input type = "number"  id = "x11"></td>
+                <td><input type = "number"  id = "x12"></td>
+            </tr>
+        <tr><td>
+                <select id = "c1">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x20"></td>
+                <td><input type = "number"  id = "x21"></td>
+                <td><input type = "number"  id = "x22"></td>
+            </tr>
+        <tr><td>
+                <select id = "c2">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x30"></td>
+                <td><input type = "number"  id = "x31"></td>
+                <td><input type = "number"  id = "x32"></td>
+            </tr>
+        <tr><td>
+                <select id = "c3">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x40"></td>
+                <td><input type = "number"  id = "x41"></td>
+                <td><input type = "number"  id = "x42"></td>
+            </tr>
+        <tr><td>
+                <select id = "c4">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x50"></td>
+                <td><input type = "number"  id = "x51"></td>
+                <td><input type = "number"  id = "x52"></td>
+            </tr>
+        <tr><td>
+                <select id = "c5">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x60"></td>
+                <td><input type = "number"  id = "x61"></td>
+                <td><input type = "number"  id = "x62"></td>
+            </tr>
+        <tr><td>
+                <select id = "c6">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x70"></td>
+                <td><input type = "number"  id = "x71"></td>
+                <td><input type = "number"  id = "x72"></td>
+            </tr>
+        <tr><td>
+                <select id = "c7">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x80"></td>
+                <td><input type = "number"  id = "x81"></td>
+                <td><input type = "number"  id = "x82"></td>
+            </tr>
+        <tr><td>
+                <select id = "c8">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "x90"></td>
+                <td><input type = "number"  id = "x91"></td>
+                <td><input type = "number"  id = "x92"></td>
+            </tr>
+        <tr><td>
+                <select id = "t0">
+                    <option>Диаметр 15</option>
+                    <option>Диаметр 28</option>
+                    <option>Диаметр 44</option>
+                    <option>Диаметр 36</option>
+                    <option>Диаметр 52</option>
+                    <option>Диаметр 31</option>
+                    <option>Диаметр 37</option>
+                    <option>Диаметр 15 отв</option>
+                    <option>Диаметр 24 отв</option>
+                    <option>Диаметр 47</option>
+                    <option>Расстояние 10</option>
+                    <option>Расстояние 10,5</option>
+                    <option>Расстояние 6</option>
+                    <option>Расстояние 34,5</option>
+                    <option>Расстояние 4,5</option>
+                    <option>Расстояние 20,1</option>
+                    <option>Расстояние 10 отв</option>
+                    <option>Расстояние 38,6</option>
+                    <option>Расстояние 80,1</option>
+                </select>
+            </td>
+                <td><input type = "number"  id = "r10"></td>
+                <td><input type = "number"  id = "r11"></td>
+                <td><input type = "number"  id = "r12"></td>
+            </tr>
+            <tr><td>Заключение</td>
+                <td id = "resultt1"></td>
+                <td id = "resultt2"></td>
+                <td id = "resultt3"></td>
+        </tr>
+    </table>
+</form>
+    <button onclick="main2()">Проверить</button>
+    </div>
+</body>
+</html>
